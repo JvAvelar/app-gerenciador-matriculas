@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Gerenciador de Matriculas</string>
+    <string name="textRegister">Cadastrar Aluno</string>
+    <string name="cpf">CPF</string>
+    <string name="name">Nome</string>
+    <string name="sport">Esporte</string>
+    <string name="day">Dia</string>
+    <string name="register">Cadastrar</string>
+</resources>
