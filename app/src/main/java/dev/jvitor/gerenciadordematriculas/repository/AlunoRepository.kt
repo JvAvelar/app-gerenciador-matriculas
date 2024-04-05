@@ -15,6 +15,10 @@ class AlunoRepository(context: Context) {
         database.update(aluno)
     }
 
+    fun get(cpf: String) : Aluno{
+        return database.get(cpf)
+    }
+
     fun getAll() : List<Aluno>{
         return database.getAll()
     }
