@@ -6,4 +6,13 @@
     <string name="sport">Esporte</string>
     <string name="day">Dia</string>
     <string name="register">Cadastrar</string>
+    <string name="textErrorCpf">CPF inválido</string>
+    <string name="textErrorName">Insira um nome válido</string>
+    <string name="textErrorSport">Insira um esporte válido</string>
+    <string name="textErrorDay">Insira um dia válido</string>
+    <string name="textErrorCpfExistent">CPF já está cadastrado!</string>
+    <string name="textSucessRegister">Aluno cadastrado com sucesso!</string>
+
+    textErroCpfExistent
+
 </resources>
