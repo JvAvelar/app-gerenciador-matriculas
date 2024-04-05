@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/greenLight"
     android:orientation="vertical"
-    tools:context=".screens.AddAluno">
+    tools:context=".screens.AddActivity">
 
     <TextView
         android:id="@+id/textRegister"
