@@ -36,9 +36,9 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
             true
     }
 
-    private fun validaCpf(cpfRecebido: String): Boolean {
+    private fun validaCpf(cpfOld: String): Boolean {
         // Remove caracteres não numéricos do CPF
-        var cpf = cpfRecebido
+        var cpf = cpfOld
         cpf = cpf.replace("[^0-9]".toRegex(), "")
             .replace("-", "").replace(".", "")
 
@@ -79,14 +79,14 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
         return cpf[9].code - '0'.code == digito1 && cpf[10].code - '0'.code == digito2
     }
 
-    private fun validaNome(nome: String) =
-        (nome.isNotBlank() && nome.isNotEmpty() && nome.length >= 4)
+    private fun validaNome(name: String) =
+        (name.isNotBlank() && name.isNotEmpty() && name.length >= 4)
 
-    private fun validaEsporte(esporte: String) =
-        (esporte.length >= 3 && esporte.isNotBlank() && esporte.isNotEmpty())
+    private fun validaEsporte(sport: String) =
+        (sport.length >= 3 && sport.isNotBlank() && sport.isNotEmpty())
 
-    private fun validaDia(dia: String): Boolean {
-        dia.replace(".", "").replace("-", "").replace(",", "")
-        return (dia.toInt() in 1..31 && dia.isNotEmpty() && dia.isNotBlank())
+    private fun validaDia(day: String): Boolean {
+        day.replace(".", "").replace("-", "").replace(",", "")
+        return (day.toInt() in 1..31 && day.isNotEmpty() && day.isNotBlank())
     }
 }
