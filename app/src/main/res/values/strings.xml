@@ -1,16 +1,21 @@
 <resources>
     <string name="app_name">Gerenciador de Matriculas</string>
     <string name="textRegister">Cadastrar Aluno</string>
+    <string name="textUpdate">Atualizar Aluno</string>
     <string name="cpf">CPF</string>
     <string name="name">Nome</string>
     <string name="sport">Esporte</string>
     <string name="day">Dia</string>
     <string name="register">Cadastrar</string>
+    <string name="update">Atualizar</string>
     <string name="textErrorCpf">CPF inválido</string>
     <string name="textErrorName">Insira um nome válido</string>
     <string name="textErrorSport">Insira um esporte válido</string>
     <string name="textErrorDay">Insira um dia válido</string>
     <string name="textErrorCpfExistent">CPF já está cadastrado!</string>
     <string name="textSucessRegister">Aluno cadastrado com sucesso!</string>
+    <string name="textCardName">Aluno: </string>
+    <string name="textCardSport">Esporte: </string>
+    <string name="textCardDay">Dia do pagamento: </string>
 
 </resources>
