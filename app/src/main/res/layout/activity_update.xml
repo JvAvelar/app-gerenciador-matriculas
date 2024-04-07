@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greenLight"
+    android:orientation="vertical"
+    tools:context=".screens.AddActivity">
+
+    <TextView
+        android:id="@+id/textRegister"
+        style="@style/TextTitles"
+        android:text="@string/textUpdate" />
+
+
+    <EditText
+        android:id="@+id/editCpf"
+        style="@style/EditText"
+        android:hint="@string/cpf"
+        android:inputType="none"
+        android:maxLength="11" />
+
+    <EditText
+        android:id="@+id/editName"
+        style="@style/EditText"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:maxLength="40" />
+
+    <EditText
+        android:id="@+id/editSport"
+        style="@style/EditText"
+        android:hint="@string/sport"
+        android:inputType="textPersonName"
+        android:maxLength="40" />
+
+    <EditText
+        android:id="@+id/editDay"
+        style="@style/EditText"
+        android:hint="@string/day"
+        android:inputType="datetime"
+        android:maxLength="2" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        style="@style/Buttons"
+        android:text="@string/update" />
+
+
+</LinearLayout>
