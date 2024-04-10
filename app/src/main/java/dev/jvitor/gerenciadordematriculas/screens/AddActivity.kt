@@ -32,7 +32,6 @@ class AddActivity : AppCompatActivity() {
 
         binding.buttonAdd.setOnClickListener {
             addAluno()
-            finish()
             Log.i("Teste", "Chegou no disparo do button onClick")
         }
     }
