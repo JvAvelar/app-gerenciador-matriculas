@@ -16,7 +16,7 @@ interface AlunoDao {
     @Delete
     fun delete(aluno: Aluno)
 
-    @Query("SELECT * FROM Aluno")
+    @Query("SELECT * FROM Aluno ORDER BY nome ASC")
     fun getAll() : List<Aluno>
 
     @Query("SELECT * FROM Aluno WHERE cpf = :cpf")
