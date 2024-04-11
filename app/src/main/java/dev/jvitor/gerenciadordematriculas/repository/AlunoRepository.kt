@@ -7,16 +7,15 @@ class AlunoRepository(context: Context) {
 
     private val database = AlunoDatabase.getDatabase(context).alunoDao()
 
-    fun insert(aluno: Aluno){
-        database.insert(aluno)
-    }
-
-    fun update(aluno: Aluno){
-        database.update(aluno)
-    }
-
     fun get(cpf: String) : Aluno{
         return database.get(cpf)
+    }
+
+    fun save(aluno: Aluno){
+        if (get(aluno.cpf) == null)
+            database.insert(aluno)
+        else
+            database.update(aluno)
     }
 
     fun getAll() : List<Aluno>{
