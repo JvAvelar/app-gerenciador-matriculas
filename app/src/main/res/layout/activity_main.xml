@@ -8,31 +8,40 @@
     android:padding="8dp"
     tools:context=".screens.MainActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:background="@color/grayLight"
+        android:padding="30dp"
         tools:ignore="MissingConstraints">
-<!--        TODO - Implementar ->  -->
-<!-- Fazer um texview para que pegue a quantidade total de alunos registrados
-e mostrar na parte superior da tela  -->
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="lorem ipsum: DOlor usd money sad mood by "
-            android:textSize="22sp"
-            />
+            android:id="@+id/textQuantity"
+            style="@style/CardTextNormal"
+            android:text="@string/textTotalRegisted"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintEnd_toStartOf="@id/textResult"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/textResult"
+            style="@style/CardTextDo"
+            android:text="@string/textResultRegisted"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/textQuantity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textQuantity"
+            app:layout_constraintTop_toTopOf="@id/textQuantity" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerList"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/grayLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,17 +50,16 @@ e mostrar na parte superior da tela  -->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnScreenAdd"
-        android:src="@drawable/ic_person_add"
         style="@style/Buttons"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_person_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="ContentDescription"/>
+        tools:ignore="ContentDescription" />
 
-<!--    Fazer com que o button fique quadrado-->
+    <!--    Fazer com que o button fique quadrado-->
     <!--        app:shapeAppearanceOverlay="@style/Widget.MaterialComponents.FloatingActionButton"-->
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
