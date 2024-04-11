@@ -17,5 +17,7 @@
     <string name="textCardName">Aluno: </string>
     <string name="textCardSport">Esporte: </string>
     <string name="textCardDay">Dia do pagamento: </string>
+    <string name="textTotalRegisted">Total de Cadastrados:</string>
+    <string name="textResultRegisted">0</string>
 
 </resources>
