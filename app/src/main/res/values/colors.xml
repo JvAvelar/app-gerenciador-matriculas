@@ -6,5 +6,7 @@
     <color name="grayLight">#DADADA</color>
     <color name="blue">#0A84FD</color>
     <color name="blueLight">#42A5F5</color>
+    <color name="green">#43A047</color>
+    <color name="Darkgray">#535157</color>
 
 </resources>
