@@ -12,31 +12,31 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = AlunoRepository(application.applicationContext)
 
-    fun validacao(context: Context, aluno: Aluno) {
-        if (!validaCpf(aluno.cpf))
+    fun validation(context: Context, aluno: Aluno) {
+        if (!validateCpf(aluno.cpf))
             Toast.makeText(context, R.string.textErrorCpf, Toast.LENGTH_SHORT).show()
-        else if (!validaNome(aluno.name))
+        else if (!validateName(aluno.name))
             Toast.makeText(context, R.string.textErrorName, Toast.LENGTH_SHORT).show()
-        else if (!validaEsporte(aluno.sport))
+        else if (!validateSport(aluno.sport))
             Toast.makeText(context, R.string.textErrorSport, Toast.LENGTH_SHORT).show()
-        else if (!validaDia(aluno.day))
+        else if (!validateDay(aluno.day))
             Toast.makeText(context, R.string.textErrorDay, Toast.LENGTH_SHORT).show()
-        else if (cpfJaCadastrado(aluno.cpf))
+        else if (cpfRegister(aluno.cpf))
             Toast.makeText(context, R.string.textErrorCpfExistent, Toast.LENGTH_SHORT).show()
         else {
-            repository.insert(aluno)
-            Toast.makeText(getApplication(), R.string.textSucessRegister, Toast.LENGTH_SHORT).show()
+            repository.save(aluno)
+            Toast.makeText(context, R.string.textSucessRegister, Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun cpfJaCadastrado(cpf: String): Boolean {
-        return if (repository.get(cpf) == null )
+    private fun cpfRegister(cpf: String): Boolean {
+        return if (repository.get(cpf) == null)
             false
         else
             true
     }
 
-    private fun validaCpf(cpfOld: String): Boolean {
+    private fun validateCpf(cpfOld: String): Boolean {
         // Remove caracteres não numéricos do CPF
         var cpf = cpfOld
         cpf = cpf.replace("[^0-9]".toRegex(), "")
@@ -79,13 +79,13 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
         return cpf[9].code - '0'.code == digito1 && cpf[10].code - '0'.code == digito2
     }
 
-    private fun validaNome(name: String) =
+    private fun validateName(name: String) =
         (name.isNotBlank() && name.isNotEmpty() && name.length >= 4)
 
-    private fun validaEsporte(sport: String) =
+    private fun validateSport(sport: String) =
         (sport.length >= 3 && sport.isNotBlank() && sport.isNotEmpty())
 
-    private fun validaDia(day: String): Boolean {
+    private fun validateDay(day: String): Boolean {
         day.replace(".", "").replace("-", "").replace(",", "")
         return (day.toInt() in 1..31 && day.isNotEmpty() && day.isNotBlank())
     }
