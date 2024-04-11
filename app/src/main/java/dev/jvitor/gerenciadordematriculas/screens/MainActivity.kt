@@ -1,5 +1,6 @@
 package dev.jvitor.gerenciadordematriculas.screens
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -35,17 +36,18 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
-        adapter.updateAlunos(viewModel.getAll())
-
-
         binding.btnScreenAdd.setOnClickListener {
             startActivity(Intent(this, AddActivity::class.java))
         }
 
+
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onResume() {
         super.onResume()
         adapter.updateAlunos(viewModel.getAll())
+        val result = viewModel.getAll().count()
+        binding.textResult.text = " $result"
     }
 }
