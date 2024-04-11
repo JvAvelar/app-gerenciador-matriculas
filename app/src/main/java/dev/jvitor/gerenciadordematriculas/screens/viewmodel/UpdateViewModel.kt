@@ -23,7 +23,7 @@ class UpdateViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun update(aluno: Aluno){
-        repository.update(aluno)
+        repository.save(aluno)
     }
 
 }
