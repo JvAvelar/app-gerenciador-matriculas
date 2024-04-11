@@ -13,10 +13,8 @@ import dev.jvitor.gerenciadordematriculas.models.Aluno
 import dev.jvitor.gerenciadordematriculas.screens.viewmodel.AddViewModel
 
 class AddActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityAddBinding
     private lateinit var viewModel: AddViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -32,7 +30,6 @@ class AddActivity : AppCompatActivity() {
 
         binding.buttonAdd.setOnClickListener {
             addAluno()
-            Log.i("Teste", "Chegou no disparo do button onClick")
         }
     }
 
@@ -41,8 +38,7 @@ class AddActivity : AppCompatActivity() {
         val name = binding.editName.text.toString()
         val sport = binding.editSport.text.toString()
         val day = binding.editDay.text.toString()
-        viewModel.validacao(applicationContext, Aluno(cpf, name, sport, day))
-        Log.i("Teste", "Chegou na função addAluno")
+        viewModel.validation(applicationContext, Aluno(cpf, name, sport, day))
+        finish()
     }
-
 }
