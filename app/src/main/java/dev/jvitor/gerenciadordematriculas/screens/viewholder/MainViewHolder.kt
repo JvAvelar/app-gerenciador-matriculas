@@ -13,6 +13,13 @@ class MainViewHolder(private val bind: CardModelBinding) : RecyclerView.ViewHold
         bind.textDoSport.text = " ${aluno.sport}"
         bind.textDoDay.text = " ${aluno.day}/mês"
 
+        bind.iconEdit.setOnClickListener{
+
+        }
+
+        bind.iconDelete.setOnClickListener {
+
+        }
 
     }
 
