@@ -27,14 +27,14 @@
             style="@style/EditText"
             android:hint="@string/name"
             android:inputType="textPersonName"
-            android:maxLength="40" />
+            android:maxLength="20" />
 
         <EditText
             android:id="@+id/editSport"
             style="@style/EditText"
             android:hint="@string/sport"
             android:inputType="textPersonName"
-            android:maxLength="40" />
+            android:maxLength="20" />
 
         <EditText
             android:id="@+id/editDay"
