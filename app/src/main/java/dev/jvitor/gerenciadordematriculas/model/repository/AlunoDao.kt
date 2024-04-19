@@ -1,11 +1,11 @@
-package dev.jvitor.gerenciadordematriculas.repository
+package dev.jvitor.gerenciadordematriculas.model.repository
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import dev.jvitor.gerenciadordematriculas.models.Aluno
+import dev.jvitor.gerenciadordematriculas.model.Aluno
 
 @Dao
 interface AlunoDao {
