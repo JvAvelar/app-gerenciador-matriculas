@@ -1,7 +1,7 @@
-package dev.jvitor.gerenciadordematriculas.repository
+package dev.jvitor.gerenciadordematriculas.model.repository
 
 import android.content.Context
-import dev.jvitor.gerenciadordematriculas.models.Aluno
+import dev.jvitor.gerenciadordematriculas.model.Aluno
 
 class AlunoRepository(context: Context) {
 
