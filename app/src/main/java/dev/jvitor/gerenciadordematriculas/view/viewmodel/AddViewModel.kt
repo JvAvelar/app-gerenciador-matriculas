@@ -1,39 +1,43 @@
-package dev.jvitor.gerenciadordematriculas.screens.viewmodel
+package dev.jvitor.gerenciadordematriculas.view.viewmodel
 
 import android.app.Application
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import dev.jvitor.gerenciadordematriculas.R
-import dev.jvitor.gerenciadordematriculas.models.Aluno
-import dev.jvitor.gerenciadordematriculas.repository.AlunoRepository
+import dev.jvitor.gerenciadordematriculas.model.Aluno
+import dev.jvitor.gerenciadordematriculas.model.repository.AlunoRepository
 
 class AddViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = AlunoRepository(application.applicationContext)
 
-    fun validation(context: Context, aluno: Aluno) {
-        if (!validateCpf(aluno.cpf))
-            Toast.makeText(context, R.string.textErrorCpf, Toast.LENGTH_SHORT).show()
-        else if (!validateName(aluno.name))
-            Toast.makeText(context, R.string.textErrorName, Toast.LENGTH_SHORT).show()
-        else if (!validateSport(aluno.sport))
-            Toast.makeText(context, R.string.textErrorSport, Toast.LENGTH_SHORT).show()
-        else if (!validateDay(aluno.day))
-            Toast.makeText(context, R.string.textErrorDay, Toast.LENGTH_SHORT).show()
-        else if (cpfRegister(aluno.cpf))
-            Toast.makeText(context, R.string.textErrorCpfExistent, Toast.LENGTH_SHORT).show()
+    fun validation(context: Context, aluno: Aluno) : Boolean {
+       if (!validateCpf(aluno.cpf)) {
+           Toast.makeText(context, R.string.textErrorCpf, Toast.LENGTH_SHORT).show()
+           return false
+       }
+        else if (!validateName(aluno.name)) {
+           Toast.makeText(context, R.string.textErrorName, Toast.LENGTH_SHORT).show()
+           return false
+       }
+        else if (!validateSport(aluno.sport)) {
+           Toast.makeText(context, R.string.textErrorSport, Toast.LENGTH_SHORT).show()
+           return false
+       }
+        else if (!validateDay(aluno.day)) {
+           Toast.makeText(context, R.string.textErrorDay, Toast.LENGTH_SHORT).show()
+           return false
+       }
+        else if (cpfRegister(aluno.cpf)) {
+           Toast.makeText(context, R.string.textErrorCpfExistent, Toast.LENGTH_SHORT).show()
+           return false
+       }
         else {
             repository.save(aluno)
             Toast.makeText(context, R.string.textSucessRegister, Toast.LENGTH_SHORT).show()
+           return true
         }
-    }
-
-    private fun cpfRegister(cpf: String): Boolean {
-        return if (repository.get(cpf) == null)
-            false
-        else
-            true
     }
 
     private fun validateCpf(cpfOld: String): Boolean {
@@ -77,6 +81,13 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
             digito2 = 0
         }
         return cpf[9].code - '0'.code == digito1 && cpf[10].code - '0'.code == digito2
+    }
+
+    private fun cpfRegister(cpf: String): Boolean {
+        return if (repository.get(cpf) == null)
+            false
+        else
+            true
     }
 
     private fun validateName(name: String) =
