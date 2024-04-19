@@ -3,11 +3,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFF</color>
     <color name="purple">#5E35B1</color>
-    <color name="grayLight">#DADADA</color>
     <color name="blue">#0A84FD</color>
     <color name="blueLight">#42A5F5</color>
     <color name="green">#43A047</color>
+    <color name="greenLight">#42ed07</color>
     <color name="red">#DF0505</color>
-    <color name="Darkgray">#535157</color>
+    <color name="grayLight">#DADADA</color>
+    <color name="Darkgray">#767577</color>
+    <color name="newColor">#f4ffff</color>
+
 
 </resources>
