@@ -1,11 +1,12 @@
-package dev.jvitor.gerenciadordematriculas.screens.viewholder
+package dev.jvitor.gerenciadordematriculas.view.viewholder
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.RecyclerView
 import dev.jvitor.gerenciadordematriculas.databinding.CardModelBinding
-import dev.jvitor.gerenciadordematriculas.models.Aluno
+import dev.jvitor.gerenciadordematriculas.model.Aluno
+import dev.jvitor.gerenciadordematriculas.view.listener.OnAlunoListener
 
-class MainViewHolder(private val bind: CardModelBinding) : RecyclerView.ViewHolder(bind.root) {
+class MainViewHolder(private val bind: CardModelBinding, private val listener: OnAlunoListener ) : RecyclerView.ViewHolder(bind.root) {
 
     @SuppressLint("SetTextI18n")
     fun bind(aluno: Aluno) {
@@ -14,11 +15,11 @@ class MainViewHolder(private val bind: CardModelBinding) : RecyclerView.ViewHold
         bind.textDoDay.text = " ${aluno.day}/mês"
 
         bind.iconEdit.setOnClickListener{
-
+            listener.onUpdate(aluno.cpf)
         }
 
         bind.iconDelete.setOnClickListener {
-
+            listener.onDelete(aluno.cpf)
         }
 
     }
