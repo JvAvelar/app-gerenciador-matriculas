@@ -14,6 +14,7 @@
     <string name="textErrorDay">Insira um dia válido</string>
     <string name="textErrorCpfExistent">CPF já está cadastrado!</string>
     <string name="textSucessRegister">Aluno cadastrado com sucesso!</string>
+    <string name="textSucessUpdated">Aluno atualizado com sucesso!</string>
     <string name="textCardName">Aluno: </string>
     <string name="textCardSport">Esporte: </string>
     <string name="textCardDay">Dia do pagamento: </string>
