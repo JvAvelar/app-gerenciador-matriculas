@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/blueLight"
     android:orientation="vertical"
-    tools:context=".screens.AddActivity">
+    tools:context=".view.AddActivity">
 
     <TextView
         android:id="@+id/textRegister"
@@ -18,13 +18,15 @@
     <EditText
         android:id="@+id/editCpf"
         style="@style/EditText"
+        android:enabled="false"
+        android:gravity="center"
         android:hint="@string/cpf"
-        android:inputType="none"
-        android:maxLength="11" />
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/editName"
         style="@style/EditText"
+        android:gravity="center"
         android:hint="@string/name"
         android:inputType="textPersonName"
         android:maxLength="40" />
@@ -32,6 +34,7 @@
     <EditText
         android:id="@+id/editSport"
         style="@style/EditText"
+        android:gravity="center"
         android:hint="@string/sport"
         android:inputType="textPersonName"
         android:maxLength="40" />
@@ -39,6 +42,7 @@
     <EditText
         android:id="@+id/editDay"
         style="@style/EditText"
+        android:gravity="center"
         android:hint="@string/day"
         android:inputType="datetime"
         android:maxLength="2" />
