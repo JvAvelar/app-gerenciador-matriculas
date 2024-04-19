@@ -7,4 +7,7 @@ Tela de cadastro de novos alunos e tela de atualização, onde ainda estou pensa
 
 Este projeto não tirei de nenhum lugar, surgiu de minha própria cabeça, por isso está ainda um pouco bagunçado, mas estou trabalhando para log dá vida ao projeto.
 
-(OBs: este README é mais como forma de mapa para mim, não como conclusão do projeto, ainda está bem longe disso.)
+APP CONCLUIDO. 
+Logo mais estarei fazendo este README bem massa. 
+
+
