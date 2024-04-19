@@ -1,4 +1,4 @@
-package dev.jvitor.gerenciadordematriculas.models
+package dev.jvitor.gerenciadordematriculas.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
