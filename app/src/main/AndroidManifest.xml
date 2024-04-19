@@ -13,13 +13,13 @@
         android:theme="@style/Theme.GerenciadorDeMatriculas"
         tools:targetApi="31">
         <activity
-            android:name=".screens.UpdateActivity"
+            android:name=".view.UpdateActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.AddActivity"
+            android:name=".view.AddActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
