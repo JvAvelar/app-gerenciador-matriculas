@@ -7,13 +7,12 @@
     android:layout_height="match_parent"
     android:background="@color/blueLight"
     android:orientation="vertical"
-    tools:context=".screens.AddActivity">
+    tools:context=".view.AddActivity">
 
     <TextView
         android:id="@+id/textRegister"
         style="@style/TextTitles"
         android:text="@string/textRegister" />
-
 
         <EditText
             android:id="@+id/editCpf"
