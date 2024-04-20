@@ -1,4 +1,4 @@
-package dev.jvitor.gerenciadordematriculas.model.repository
+package dev.jvitor.gerenciadordematriculas.repository
 
 import android.content.Context
 import androidx.room.Database

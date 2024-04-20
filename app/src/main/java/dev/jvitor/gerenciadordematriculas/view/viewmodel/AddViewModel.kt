@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import dev.jvitor.gerenciadordematriculas.R
 import dev.jvitor.gerenciadordematriculas.model.Aluno
-import dev.jvitor.gerenciadordematriculas.model.repository.AlunoRepository
+import dev.jvitor.gerenciadordematriculas.repository.AlunoRepository
 
 class AddViewModel(application: Application) : AndroidViewModel(application) {
 

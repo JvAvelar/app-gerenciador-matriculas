@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import dev.jvitor.gerenciadordematriculas.model.Aluno
-import dev.jvitor.gerenciadordematriculas.model.repository.AlunoRepository
+import dev.jvitor.gerenciadordematriculas.repository.AlunoRepository
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
