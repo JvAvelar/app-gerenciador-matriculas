@@ -18,10 +18,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         listAlunos.value = repository.getAll()
     }
 
-    fun quantity(qtde: Int): Int{
-        return qtde
-    }
-
     fun delete(cpf: String) {
         repository.delete(cpf)
     }
