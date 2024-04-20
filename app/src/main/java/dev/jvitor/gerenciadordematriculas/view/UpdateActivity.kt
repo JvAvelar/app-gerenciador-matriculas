@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import dev.jvitor.gerenciadordematriculas.R
 import dev.jvitor.gerenciadordematriculas.databinding.ActivityUpdateBinding
 import dev.jvitor.gerenciadordematriculas.model.Aluno
+import dev.jvitor.gerenciadordematriculas.model.Constants
 import dev.jvitor.gerenciadordematriculas.view.viewmodel.UpdateViewModel
 
 class UpdateActivity : AppCompatActivity() {
@@ -52,10 +53,10 @@ class UpdateActivity : AppCompatActivity() {
 
     // Atribuindo os valores da intent recebida da MainActivity para ser mostrada nos hints
     private fun valuesFields() {
-        cpf = intent?.extras?.getString("cpf") ?: throw IllegalStateException("cpf not found")
-        val name = intent?.extras?.getString("name") ?: throw IllegalStateException("name not found")
-        val sport = intent?.extras?.getString("sport") ?: throw IllegalStateException("sport not found")
-        val day = intent?.extras?.getString("day") ?: throw IllegalStateException("day not found")
+        cpf = intent?.extras?.getString(Constants.Attributs.CPF) ?: throw IllegalStateException(getString(R.string.cpfNotFound))
+        val name = intent?.extras?.getString(Constants.Attributs.NAME) ?: throw IllegalStateException(getString(R.string.nameNotFound))
+        val sport = intent?.extras?.getString(Constants.Attributs.SPORT) ?: throw IllegalStateException(getString(R.string.sportNotFound))
+        val day = intent?.extras?.getString(Constants.Attributs.DAY) ?: throw IllegalStateException(getString(R.string.dayNotFound))
 
         binding.editCpf.setText(cpf)
         binding.editName.setText(name)
