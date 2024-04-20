@@ -74,17 +74,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onResume() {
         super.onResume()
         viewModel.getAll()
-        val result = viewModel.quantity()
-        binding.textResult.text = " $result"
     }
 
+    @SuppressLint("SetTextI18n")
     private fun observer() {
         viewModel.alunos.observe(this) {
             adapter.updateAlunos(it)
+            binding.textResult.text = " ${it.count()}"
         }
     }
 }
