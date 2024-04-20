@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import dev.jvitor.gerenciadordematriculas.model.Aluno
+import dev.jvitor.gerenciadordematriculas.model.Constants
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
 
@@ -23,7 +24,7 @@ abstract class AlunoDatabase : RoomDatabase() {
                 synchronized(this){
                     INSTANCE = Room.databaseBuilder(context,
                         AlunoDatabase::class.java,
-                        "alunos-db")
+                        Constants.Database.DATABASE_NAME)
                         .allowMainThreadQueries()
                         .build()
                 }
