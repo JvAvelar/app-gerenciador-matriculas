@@ -36,27 +36,30 @@ class UpdateActivity : AppCompatActivity() {
 
     }
 
-    fun doUpdate(){
+    fun doUpdate() {
         val name = binding.editName.text.toString()
         val sport = binding.editSport.text.toString()
         val day = binding.editDay.text.toString()
-        if (viewModel.validation(applicationContext.applicationContext, Aluno(cpf, name, sport, day)))
+        if (viewModel.validation(
+                applicationContext.applicationContext,
+                Aluno(cpf, name, sport, day)
+            )
+        )
             finish()
         else
             return
     }
 
     // Atribuindo os valores da intent recebida da MainActivity para ser mostrada nos hints
-    private fun valuesFields(){
+    private fun valuesFields() {
         cpf = intent?.extras?.getString("cpf") ?: throw IllegalStateException("cpf not found")
         val name = intent?.extras?.getString("name") ?: throw IllegalStateException("name not found")
         val sport = intent?.extras?.getString("sport") ?: throw IllegalStateException("sport not found")
         val day = intent?.extras?.getString("day") ?: throw IllegalStateException("day not found")
 
-        binding.editCpf.hint = cpf
-        binding.editName.hint = name
-        binding.editSport.hint = sport
-        binding.editDay.hint = day
+        binding.editCpf.setText(cpf)
+        binding.editName.setText(name)
+        binding.editSport.setText(sport)
+        binding.editDay.setText(day)
     }
-
 }
