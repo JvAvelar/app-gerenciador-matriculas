@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.jvitor.gerenciadordematriculas.R
 import dev.jvitor.gerenciadordematriculas.databinding.ActivityMainBinding
+import dev.jvitor.gerenciadordematriculas.model.Constants
 import dev.jvitor.gerenciadordematriculas.view.adapter.MainAdapter
 import dev.jvitor.gerenciadordematriculas.view.listener.OnAlunoListener
 import dev.jvitor.gerenciadordematriculas.view.viewmodel.MainViewModel
@@ -42,10 +43,10 @@ class MainActivity : AppCompatActivity() {
             override fun onUpdate(cpf: String) {
                 val intent = Intent(applicationContext, UpdateActivity::class.java)
                 val aluno = viewModel.get(cpf)
-                intent.putExtra("cpf", aluno.cpf)
-                intent.putExtra("name", aluno.name)
-                intent.putExtra("sport", aluno.sport)
-                intent.putExtra("day", aluno.day)
+                intent.putExtra(Constants.Attributs.CPF, aluno.cpf)
+                intent.putExtra(Constants.Attributs.NAME, aluno.name)
+                intent.putExtra(Constants.Attributs.SPORT, aluno.sport)
+                intent.putExtra(Constants.Attributs.DAY, aluno.day)
                 startActivity(intent)
             }
 
