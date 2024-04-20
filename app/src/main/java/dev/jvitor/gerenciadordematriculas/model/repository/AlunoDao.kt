@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import dev.jvitor.gerenciadordematriculas.model.Aluno
+import dev.jvitor.gerenciadordematriculas.model.Constants
 
 @Dao
 interface AlunoDao {
@@ -16,14 +17,13 @@ interface AlunoDao {
     @Delete
     fun delete(aluno: Aluno)
 
-    @Query("SELECT * FROM Aluno ORDER BY nome ASC")
+    @Query(Constants.Database.QUERY_ALL)
     fun getAll() : List<Aluno>
 
-    @Query("SELECT * FROM Aluno WHERE cpf = :cpf")
+    @Query(Constants.Database.QUERY_GET)
     fun get(cpf: String) : Aluno
 
     @Update
     fun update(aluno: Aluno)
-
 
 }
