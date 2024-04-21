@@ -29,29 +29,30 @@ class UpdateActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[UpdateViewModel::class.java]
 
+        valuesFields()
+
+        clickable()
+
+    }
+
+    private fun clickable(){
         binding.buttonUpdate.setOnClickListener {
             doUpdate()
         }
 
-        valuesFields()
-
+        binding.iconBack.setOnClickListener {
+            finish()
+        }
     }
 
-    fun doUpdate() {
+    private fun doUpdate() {
         val name = binding.editName.text.toString()
         val sport = binding.editSport.text.toString()
         val day = binding.editDay.text.toString()
-        if (viewModel.validation(
-                applicationContext.applicationContext,
-                Aluno(cpf, name, sport, day)
-            )
-        )
-            finish()
-        else
-            return
+        if (viewModel.validation(applicationContext.applicationContext,Aluno(cpf, name, sport, day))) finish()
+        else return
     }
 
-    // Atribuindo os valores da intent recebida da MainActivity para ser mostrada nos hints
     private fun valuesFields() {
         cpf = intent?.extras?.getString(Constants.Attributs.CPF) ?: throw IllegalStateException(getString(R.string.cpfNotFound))
         val name = intent?.extras?.getString(Constants.Attributs.NAME) ?: throw IllegalStateException(getString(R.string.nameNotFound))
