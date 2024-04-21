@@ -23,10 +23,11 @@
     <string name="deleteAluno">Excluir aluno</string>
     <string name="textConfirmationDelete">Tem certeza que deseja excluir este aluno?</string>
     <string name="yes">Sim</string>
-    <string name="no">Não</string>
+    <string name="cancel">Cancelar</string>
     <string name="cpfNotFound">cpf not found</string>
     <string name="nameNotFound">name not found</string>
     <string name="sportNotFound">sport not found</string>
     <string name="dayNotFound">day not found</string>
+    <string name="unlockPhone">Desbloqueie seu celular</string>
 
 </resources>
