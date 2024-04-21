@@ -27,8 +27,17 @@ class AddActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[AddViewModel::class.java]
 
+        clickable()
+
+    }
+
+    private fun clickable(){
         binding.buttonAdd.setOnClickListener {
             addAluno()
+        }
+
+        binding.iconBack.setOnClickListener {
+            finish()
         }
     }
 
@@ -37,9 +46,7 @@ class AddActivity : AppCompatActivity() {
         val name = binding.editName.text.toString()
         val sport = binding.editSport.text.toString()
         val day = binding.editDay.text.toString()
-        if (viewModel.validation(applicationContext, Aluno(cpf, name, sport, day)) )
-            finish()
-        else
-            return
+        if (viewModel.validation(applicationContext, Aluno(cpf, name, sport, day))) finish()
+        else return
     }
 }
