@@ -1,6 +1,6 @@
 <h1 align="center">Gerenciador de  Matriculas</h1>
 
-<h3 align="center"> Este é um app para responsáveis por academias, onde podem cadastrar alunos, deletar, e se caso precise, editar algumas informações dos mesmos.</h3> 
+<h3 align="center"> Este é um aplicativo para responsáveis por academias, onde podem cadastrar alunos, deletar, e se caso precise, editar algumas informações dos mesmos.</h3> 
 
 #
 
@@ -58,4 +58,7 @@ Se confirmarmos ("Sim"), o aluno é deletado. se não ("Cancelar"), o aviso é f
 
 - [@JvAvelar](https://www.github.com/JvAvelar)
 
+# 
+
+Caso tenha interesse em utilizar o app, entre em contato para receber o arquivo apk para instalação.
 
