@@ -39,7 +39,7 @@ Se confirmarmos ("Sim"), o aluno é deletado. se não ("Cancelar"), o aviso é f
 
 ## Funcionalidades
  * Cadastrar alunos
- * Buscarn todos os alunos
+ * Buscar todos os alunos
  * Atualizar as informações dos alunos
  * Deletar alunos
 
