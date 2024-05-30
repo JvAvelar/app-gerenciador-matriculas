@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Gerenciador de Matriculas</string>
-    <string name="textRegister">Cadastrar Aluno</string>
-    <string name="textUpdate">Atualizar Aluno</string>
+    <string name="textRegister">Cadastrar aluno</string>
+    <string name="textUpdate">Atualizar aluno</string>
     <string name="cpf">CPF</string>
     <string name="name">Nome</string>
     <string name="sport">Esporte</string>
@@ -18,7 +18,7 @@
     <string name="textCardName">Aluno: </string>
     <string name="textCardSport">Esporte: </string>
     <string name="textCardDay">Dia do pagamento: </string>
-    <string name="textTotalRegisted">Total de Cadastrados:</string>
+    <string name="textTotalRegisted">Alunos cadastrados:</string>
     <string name="textResultRegisted">0</string>
     <string name="deleteAluno">Excluir aluno</string>
     <string name="textConfirmationDelete">Tem certeza que deseja excluir este aluno?</string>

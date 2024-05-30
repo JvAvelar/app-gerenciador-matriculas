@@ -6,14 +6,11 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.biometric.BiometricPrompt
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.jvitor.gerenciadordematriculas.R
-import dev.jvitor.gerenciadordematriculas.biometric.BiometricHelper
 import dev.jvitor.gerenciadordematriculas.databinding.ActivityMainBinding
 import dev.jvitor.gerenciadordematriculas.model.Constants
 import dev.jvitor.gerenciadordematriculas.view.adapter.MainAdapter
@@ -24,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val adapter = MainAdapter()
     private lateinit var viewModel: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,27 +31,6 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
-
-        if (BiometricHelper.isBiometricAvailable(this)) {
-            val executor = ContextCompat.getMainExecutor(this)
-            val callback = object : BiometricPrompt.AuthenticationCallback() {
-
-                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
-                    super.onAuthenticationSucceeded(result)
-                }
-            }
-
-            val bio = BiometricPrompt(this, executor, callback)
-            val info = BiometricPrompt.PromptInfo.Builder()
-                .setTitle(getString(R.string.app_name))
-                .setSubtitle(getString(R.string.unlockPhone))
-                .setNegativeButtonText(getString(R.string.cancel))
-                .setConfirmationRequired(false)
-                .build()
-
-            bio.authenticate(info)
-
         }
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
