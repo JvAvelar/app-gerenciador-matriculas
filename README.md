@@ -6,7 +6,7 @@
 
 Na tela inicial é possível que os responsáveis possam cadastrar (botão na parte inferior direita), ver a quantidade de alunos cadastrados e as informações de cada aluno. 
 
-![image](https://github.com/JvAvelar/app-gerenciador-matriculas-alunos/assets/123327674/d3f1e4cf-8ccd-4ffd-8a79-806cc4a1062c)
+![principal](https://github.com/JvAvelar/app-gerenciador-matriculas-alunos/assets/123327674/1b6921ac-e098-4bd0-847e-a79ca25e9399)
 
 No card de cada aluno é possível ver algumas informações para identificar o aluno e também, para que possamos editar e excluir.
 
@@ -14,7 +14,7 @@ No card de cada aluno é possível ver algumas informações para identificar o 
 
 Na tela de cadastro temos os campos a serem preenchidos com as devidas informações verídicas do aluno.
 
-![image](https://github.com/JvAvelar/app-gerenciador-matriculas-alunos/assets/123327674/2870e8c6-d279-45ab-92b1-cdb40043852f)
+![cadastrar](https://github.com/JvAvelar/app-gerenciador-matriculas-alunos/assets/123327674/01fb5415-d65d-433e-88f8-f1a0feb2dab8)
 
 Ao clicar no botão "cadastrar", o programa verifica se os campos foram preenchidos seguindo nossa regra de negócio, se sim, esta tela é fechada, o aluno é cadastrado no nosso banco de dados e o usuário direcionado diretamente para a tela inicial, onde de imediato, poderá ver o aluno recém cadastrado. 
 
@@ -23,7 +23,7 @@ Ao clicar no botão "cadastrar", o programa verifica se os campos foram preenchi
 Na tela de atualizar conseguimos editar o nome, esporte e dia, uma vez que o CPF não é modificável e na nossa regra de negócio, só é possível adicionar um cpf válido.
 Então o CPF uma vez digitado e validado, não há como ser modificado.
 
-![image](https://github.com/JvAvelar/app-gerenciador-matriculas-alunos/assets/123327674/1d48143f-58f5-41c8-ae48-b1929243831b)
+![atualizar](https://github.com/JvAvelar/app-gerenciador-matriculas-alunos/assets/123327674/0202e517-492f-4439-beb4-34e273764622)
 
 Ao clicar no botão "Atualizar", o usuário será direcionado diretamente para a tela inicial, onde será mostrado as informações atualizadas instataneamente.
 
@@ -31,7 +31,7 @@ Ao clicar no botão "Atualizar", o usuário será direcionado diretamente para a
 
 Ao tentar excluir um aluno, antes é mostrado um aviso para confirmação.
 
-![image](https://github.com/JvAvelar/app-gerenciador-matriculas-alunos/assets/123327674/6f0b719e-6a24-4523-87b8-b1437e9e2904)
+![excluir](https://github.com/JvAvelar/app-gerenciador-matriculas-alunos/assets/123327674/9a8538c8-27d6-4ff4-809c-0a91266626f6)
 
 Se confirmarmos ("Sim"), o aluno é deletado. se não ("Cancelar"), o aviso é fechado e não ocorre nenhuma modificação. 
 
