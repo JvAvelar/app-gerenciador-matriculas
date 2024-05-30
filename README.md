@@ -52,6 +52,8 @@ Se confirmarmos ("Sim"), o aluno é deletado. se não ("Cancelar"), o aviso é f
   * SQLite
   * ROOM
   * Arquitetura MVVM
+  * Flow
+  * Coroutines
 
 #
 
