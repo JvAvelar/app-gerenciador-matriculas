@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blueLight"
+    android:background="@drawable/shape_screens"
     android:orientation="vertical"
     tools:context=".view.AddActivity">
 
@@ -16,21 +16,20 @@
 
         <ImageView
             android:id="@+id/iconBack"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back"
-            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/textRegister"
-            app:layout_constraintEnd_toStartOf="@id/textRegister"
-            app:layout_constraintTop_toTopOf="@id/textRegister" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
             android:id="@+id/textRegister"
             style="@style/TextTitles"
             android:text="@string/textRegister"
-            app:layout_constraintStart_toEndOf="@id/iconBack"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             />
