@@ -24,12 +24,14 @@
     <style name="Buttons" >
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">64dp</item>
+        <item name="android:paddingEnd">64dp</item>
         <item name="android:layout_marginTop">24dp</item>
         <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:backgroundTint">@color/Darkgray</item>
+        <item name="android:backgroundTint">@color/pink</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textStyle">bold</item>
-
     </style>
 
     <style name="CardTextNormal" >
@@ -44,8 +46,4 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">22sp</item>
     </style>
-
-
-
-
 </resources>
