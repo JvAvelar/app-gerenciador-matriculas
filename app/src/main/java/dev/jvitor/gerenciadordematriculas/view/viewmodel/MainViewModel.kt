@@ -2,8 +2,6 @@ package dev.jvitor.gerenciadordematriculas.view.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import dev.jvitor.gerenciadordematriculas.model.Aluno
 import dev.jvitor.gerenciadordematriculas.repository.AlunoRepository
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,11 +11,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = AlunoRepository(application.applicationContext)
 
-    private val listAlunos = MutableStateFlow<List<Aluno>>(emptyList())
-    val alunos = listAlunos.asStateFlow()
+    private val _alunos = MutableStateFlow<List<Aluno>>(emptyList())
+    val alunos = _alunos.asStateFlow()
 
     fun getAll(){
-        listAlunos.value = repository.getAll()
+        _alunos.value = repository.getAll()
     }
 
     fun delete(cpf: String) {
