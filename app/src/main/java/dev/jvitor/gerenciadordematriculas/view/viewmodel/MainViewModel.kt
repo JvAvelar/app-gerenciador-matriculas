@@ -6,13 +6,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import dev.jvitor.gerenciadordematriculas.model.Aluno
 import dev.jvitor.gerenciadordematriculas.repository.AlunoRepository
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = AlunoRepository(application.applicationContext)
 
-    private val listAlunos = MutableLiveData<List<Aluno>>()
-    val alunos: LiveData<List<Aluno>> = listAlunos
+    private val listAlunos = MutableStateFlow<List<Aluno>>(emptyList())
+    val alunos = listAlunos.asStateFlow()
 
     fun getAll(){
         listAlunos.value = repository.getAll()
