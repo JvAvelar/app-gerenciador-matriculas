@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.jvitor.gerenciadordematriculas.R
 import dev.jvitor.gerenciadordematriculas.databinding.ActivityMainBinding
@@ -16,6 +17,7 @@ import dev.jvitor.gerenciadordematriculas.model.Constants
 import dev.jvitor.gerenciadordematriculas.view.adapter.MainAdapter
 import dev.jvitor.gerenciadordematriculas.view.listener.OnAlunoListener
 import dev.jvitor.gerenciadordematriculas.view.viewmodel.MainViewModel
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -80,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.getAll()
     }
 
-    private fun clickable(){
+    private fun clickable() {
         binding.btnScreenAdd.setOnClickListener {
             startActivity(Intent(this, AddActivity::class.java))
         }
@@ -88,9 +90,12 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun observer() {
-        viewModel.alunos.observe(this) {
-            adapter.updateAlunos(it)
-            binding.textResult.text = " ${it.count()}"
+
+        lifecycleScope.launch {
+            viewModel.alunos.collect { list ->
+                adapter.updateAlunos(list)
+                binding.textResult.text = " ${list.count()}"
+            }
         }
     }
 }
