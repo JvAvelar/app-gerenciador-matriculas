@@ -4,35 +4,36 @@ import android.app.Application
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
 import dev.jvitor.gerenciadordematriculas.R
 import dev.jvitor.gerenciadordematriculas.model.Aluno
 import dev.jvitor.gerenciadordematriculas.repository.AlunoRepository
+import kotlinx.coroutines.launch
 
 class UpdateViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = AlunoRepository(application.applicationContext)
 
-    fun get(cpf: String) : String {
+    fun get(cpf: String): String {
         return repository.get(cpf).cpf
     }
 
-    fun validation(context: Context, aluno: Aluno) : Boolean {
-        if (!validateName(aluno.name)) {
+    fun validation(context: Context, aluno: Aluno): Boolean {
+        return if (!validateName(aluno.name)) {
             Toast.makeText(context, R.string.textErrorName, Toast.LENGTH_SHORT).show()
-            return false
-        }
-        else if (!validateSport(aluno.sport)) {
+            false
+        } else if (!validateSport(aluno.sport)) {
             Toast.makeText(context, R.string.textErrorSport, Toast.LENGTH_SHORT).show()
-            return false
-        }
-        else if (!validateDay(aluno.day)) {
+            false
+        } else if (!validateDay(aluno.day)) {
             Toast.makeText(context, R.string.textErrorDay, Toast.LENGTH_SHORT).show()
-            return false
-        }
-        else {
-            repository.save(aluno)
-            Toast.makeText(context, R.string.textSucessUpdated, Toast.LENGTH_SHORT).show()
-            return true
+            false
+        } else {
+            viewModelScope.launch {
+                repository.save(aluno)
+                Toast.makeText(context, R.string.textSucessUpdated, Toast.LENGTH_SHORT).show()
+            }
+            true
         }
     }
 
