@@ -19,22 +19,25 @@ class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
         return MainViewHolder(item, listener)
     }
 
+    // Adiciona o aluno que está na posição à tela
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
        holder.bind(listAluno[position])
     }
 
+    // Responsável por retornar a quantidade de elementos vai ter na tela
     override fun getItemCount(): Int {
         return listAluno.count()
     }
 
+    // Recebe e atualiza os alunos vindo do banco de dados
     @SuppressLint("NotifyDataSetChanged")
     fun updateAlunos(list: List<Aluno>){
         listAluno = list
         notifyDataSetChanged()
     }
 
+    // Responsável por passar o listener para o viewHolder
     fun attachListener(alunoListener: OnAlunoListener){
         listener = alunoListener
     }
-
 }
