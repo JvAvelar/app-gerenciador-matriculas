@@ -51,9 +51,10 @@ Se confirmarmos ("Sim"), o aluno é deletado. se não ("Cancelar"), o aviso é f
   * Android Studio
   * SQLite
   * ROOM
-  * Arquitetura MVVM
   * Flow
   * Coroutines
+  * Arquitetura MVVM
+
 
 #
 
