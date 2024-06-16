@@ -14,7 +14,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _alunos = MutableStateFlow<List<Aluno>>(emptyList())
     val alunos = _alunos.asStateFlow()
 
-    fun getAll(){
+    fun getAll() {
         _alunos.value = repository.getAll()
     }
 
@@ -22,7 +22,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         repository.delete(cpf)
     }
 
-    fun get(cpf: String) : Aluno{
+    fun get(cpf: String): Aluno {
         return repository.get(cpf)
     }
 }
