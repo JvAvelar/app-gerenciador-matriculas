@@ -11,7 +11,7 @@ class AlunoRepository(context: Context) {
         return database.get(cpf)
     }
 
-    fun save(aluno: Aluno){
+    suspend fun save(aluno: Aluno){
         if (get(aluno.cpf) == null)
             database.insert(aluno)
         else
@@ -22,7 +22,7 @@ class AlunoRepository(context: Context) {
         return database.getAll()
     }
 
-    fun delete(cpf: String){
+   fun delete(cpf: String){
         val aluno = database.get(cpf)
         database.delete(aluno)
     }
