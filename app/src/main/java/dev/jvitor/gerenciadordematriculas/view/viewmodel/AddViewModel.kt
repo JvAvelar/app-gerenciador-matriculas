@@ -4,39 +4,38 @@ import android.app.Application
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
 import dev.jvitor.gerenciadordematriculas.R
 import dev.jvitor.gerenciadordematriculas.model.Aluno
 import dev.jvitor.gerenciadordematriculas.repository.AlunoRepository
+import kotlinx.coroutines.launch
 
 class AddViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = AlunoRepository(application.applicationContext)
 
-    fun validation(context: Context, aluno: Aluno) : Boolean {
-       if (!validateCpf(aluno.cpf)) {
-           Toast.makeText(context, R.string.textErrorCpf, Toast.LENGTH_SHORT).show()
-           return false
-       }
-        else if (!validateName(aluno.name)) {
-           Toast.makeText(context, R.string.textErrorName, Toast.LENGTH_SHORT).show()
-           return false
-       }
-        else if (!validateSport(aluno.sport)) {
-           Toast.makeText(context, R.string.textErrorSport, Toast.LENGTH_SHORT).show()
-           return false
-       }
-        else if (!validateDay(aluno.day)) {
-           Toast.makeText(context, R.string.textErrorDay, Toast.LENGTH_SHORT).show()
-           return false
-       }
-        else if (cpfRegister(aluno.cpf)) {
-           Toast.makeText(context, R.string.textErrorCpfExistent, Toast.LENGTH_SHORT).show()
-           return false
-       }
-        else {
-            repository.save(aluno)
-            Toast.makeText(context, R.string.textSucessRegister, Toast.LENGTH_SHORT).show()
-           return true
+    fun validation(context: Context, aluno: Aluno): Boolean {
+        return if (!validateCpf(aluno.cpf)) {
+            Toast.makeText(context, R.string.textErrorCpf, Toast.LENGTH_SHORT).show()
+            false
+        } else if (!validateName(aluno.name)) {
+            Toast.makeText(context, R.string.textErrorName, Toast.LENGTH_SHORT).show()
+            false
+        } else if (!validateSport(aluno.sport)) {
+            Toast.makeText(context, R.string.textErrorSport, Toast.LENGTH_SHORT).show()
+            false
+        } else if (!validateDay(aluno.day)) {
+            Toast.makeText(context, R.string.textErrorDay, Toast.LENGTH_SHORT).show()
+            false
+        } else if (cpfRegister(aluno.cpf)) {
+            Toast.makeText(context, R.string.textErrorCpfExistent, Toast.LENGTH_SHORT).show()
+            false
+        } else {
+            viewModelScope.launch {
+                repository.save(aluno)
+                Toast.makeText(context, R.string.textSucessRegister, Toast.LENGTH_SHORT).show()
+            }
+            true
         }
     }
 
