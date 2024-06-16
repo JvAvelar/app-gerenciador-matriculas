@@ -90,7 +90,6 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun observer() {
-
         lifecycleScope.launch {
             viewModel.alunos.collect { list ->
                 adapter.updateAlunos(list)
