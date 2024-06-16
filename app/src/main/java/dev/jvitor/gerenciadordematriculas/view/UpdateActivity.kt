@@ -27,6 +27,7 @@ class UpdateActivity : AppCompatActivity() {
             insets
         }
 
+        // Iniciando a viewModel com Ciclo de vida da activity
         viewModel = ViewModelProvider(this)[UpdateViewModel::class.java]
 
         valuesFields()
@@ -35,6 +36,7 @@ class UpdateActivity : AppCompatActivity() {
 
     }
 
+    // Eventos de clicks dos botões
     private fun clickable(){
         binding.buttonUpdate.setOnClickListener {
             doUpdate()
@@ -45,6 +47,7 @@ class UpdateActivity : AppCompatActivity() {
         }
     }
 
+    // Responsável por atualizar informações do aluno
     private fun doUpdate() {
         val name = binding.editName.text.toString()
         val sport = binding.editSport.text.toString()
@@ -53,6 +56,10 @@ class UpdateActivity : AppCompatActivity() {
         else return
     }
 
+
+  /* Responsável por receber os valores vindo pela intent da MainActivity
+  *  e alterar os valores dos campos para serem alterados
+  */
     private fun valuesFields() {
         cpf = intent?.extras?.getString(Constants.Attributs.CPF) ?: throw IllegalStateException(getString(R.string.cpfNotFound))
         val name = intent?.extras?.getString(Constants.Attributs.NAME) ?: throw IllegalStateException(getString(R.string.nameNotFound))
