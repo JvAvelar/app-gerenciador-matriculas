@@ -14,6 +14,7 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = AlunoRepository(application.applicationContext)
 
+    // Verifica se os campos estão preenchidos corretamente
     fun validation(context: Context, aluno: Aluno): Boolean {
         return if (!validateCpf(aluno.cpf)) {
             Toast.makeText(context, R.string.textErrorCpf, Toast.LENGTH_SHORT).show()
@@ -39,6 +40,7 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    // Faz a validação do cpf
     private fun validateCpf(cpfOld: String): Boolean {
         // Remove caracteres não numéricos do CPF
         var cpf = cpfOld
@@ -82,6 +84,7 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
         return cpf[9].code - '0'.code == digito1 && cpf[10].code - '0'.code == digito2
     }
 
+    // Verifica se o cpf a tentar cadastrar ja está sendo utilizado
     private fun cpfRegister(cpf: String): Boolean {
         return if (repository.get(cpf) == null)
             false
@@ -89,12 +92,15 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
             true
     }
 
+    // Faz a validação do nome
     private fun validateName(name: String) =
         (name.isNotBlank() && name.isNotEmpty() && name.length >= 4)
 
+    // Faz a validação do esporte
     private fun validateSport(sport: String) =
         (sport.length >= 3 && sport.isNotBlank() && sport.isNotEmpty())
 
+    // Faz a validação do dia
     private fun validateDay(day: String): Boolean {
         day.replace(".", "").replace("-", "").replace(",", "")
         return (day.toInt() in 1..31 && day.isNotEmpty() && day.isNotBlank())
