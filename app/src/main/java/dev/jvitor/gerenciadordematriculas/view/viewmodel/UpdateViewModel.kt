@@ -47,6 +47,4 @@ class UpdateViewModel(application: Application) : AndroidViewModel(application) 
         day.replace(".", "").replace("-", "").replace(",", "")
         return (day.toInt() in 1..31 && day.isNotEmpty() && day.isNotBlank())
     }
-
-
 }
