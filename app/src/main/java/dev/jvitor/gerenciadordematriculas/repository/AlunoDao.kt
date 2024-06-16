@@ -12,7 +12,7 @@ import dev.jvitor.gerenciadordematriculas.model.Constants
 interface AlunoDao {
 
     @Insert
-    fun insert(aluno: Aluno)
+   suspend fun insert(aluno: Aluno)
 
     @Delete
     fun delete(aluno: Aluno)
@@ -24,6 +24,6 @@ interface AlunoDao {
     fun get(cpf: String) : Aluno
 
     @Update
-    fun update(aluno: Aluno)
+    suspend fun update(aluno: Aluno)
 
 }
