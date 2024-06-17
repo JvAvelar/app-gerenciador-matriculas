@@ -14,6 +14,7 @@ import dev.jvitor.gerenciadordematriculas.view.viewmodel.AddViewModel
 class AddActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddBinding
     private lateinit var viewModel: AddViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,12 +26,14 @@ class AddActivity : AppCompatActivity() {
             insets
         }
 
+        // Criando viewModel
         viewModel = ViewModelProvider(this)[AddViewModel::class.java]
 
         clickable()
 
     }
 
+    // Eventos de click dos botões
     private fun clickable(){
         binding.buttonAdd.setOnClickListener {
             addAluno()
@@ -41,6 +44,7 @@ class AddActivity : AppCompatActivity() {
         }
     }
 
+    // Responsável por adicionar novos alunos
     private fun addAluno() {
         val cpf = binding.editCpf.text.toString()
         val name = binding.editName.text.toString()
