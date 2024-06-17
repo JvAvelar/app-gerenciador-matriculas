@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 
 class AddViewModel(application: Application) : AndroidViewModel(application) {
 
+    // Instancia do repositorio
     private val repository = AlunoRepository(application.applicationContext)
 
     // Verifica se os campos estão preenchidos corretamente
