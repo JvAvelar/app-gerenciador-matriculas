@@ -27,7 +27,7 @@ class UpdateActivity : AppCompatActivity() {
             insets
         }
 
-        // Iniciando a viewModel com Ciclo de vida da activity
+        // Criando viewModel
         viewModel = ViewModelProvider(this)[UpdateViewModel::class.java]
 
         valuesFields()
