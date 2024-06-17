@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // Criando viewModel
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         // Layout
@@ -42,7 +43,9 @@ class MainActivity : AppCompatActivity() {
         // adapter
         binding.recyclerList.adapter = adapter
 
+        // Enviando os dados do aluno da Main para a update
         val listener = object : OnAlunoListener {
+            // Click no lapis de edição
             override fun onUpdate(cpf: String) {
                 val intent = Intent(applicationContext, UpdateActivity::class.java)
                 val aluno = viewModel.get(cpf)
@@ -53,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+            // Click na lixeira para deletar aluno
             override fun onDelete(cpf: String) {
                 AlertDialog.Builder(this@MainActivity)
                     .setTitle(getString(R.string.deleteAluno))
@@ -69,6 +73,7 @@ class MainActivity : AppCompatActivity() {
 
         observer()
 
+        // Passando o listener para o adapter, para ser usado na viewHolder
         adapter.attachListener(listener)
 
         viewModel.getAll()
@@ -79,15 +84,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        // Faz com que a lista seja atualizada instantâneamente
         viewModel.getAll()
     }
 
+    // Eventos de click dos botões
     private fun clickable() {
         binding.btnScreenAdd.setOnClickListener {
             startActivity(Intent(this, AddActivity::class.java))
         }
     }
 
+    // Observador
     @SuppressLint("SetTextI18n")
     private fun observer() {
         lifecycleScope.launch {
